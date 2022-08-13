@@ -2,11 +2,18 @@
 
 namespace Wildberries_Parser
 {
+    /// <summary>
+    /// Console aplication.
+    /// </summary>
     public static class Program
     {
-       public static void Main(string[] args)
+        /// <summary>
+        /// Console aplication.
+        /// </summary>
+        public static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Startup startup = new Startup();
+            startup.CreateParsingService().Parse().Wait();
         }
     }
 }

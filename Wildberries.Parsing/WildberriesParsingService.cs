@@ -20,11 +20,13 @@ namespace Wildberries.Parsing
         /// <param name="appSettings">App configuration.</param>
         /// <param name="logger">App logger.</param>
         /// <param name="itemsReader">Reader of all items on site.</param>
-        public WildberriesParsingService(IConfiguration appSettings, ILogger logger, IItemsReader itemsReader)
+        /// <param name="storageWriter">Writer to save data.</param>
+        public WildberriesParsingService(IConfiguration appSettings, ILogger logger, IItemsReader itemsReader, IStorageWriter storageWriter)
         {
             this.AppSettings = appSettings;
             this.Logger = logger;
             this.ItemsReader = itemsReader;
+            this.StorageWriter = storageWriter;
         }
 
         private IConfiguration AppSettings { get; }
@@ -32,6 +34,8 @@ namespace Wildberries.Parsing
         private ILogger Logger { get; }
 
         private IItemsReader ItemsReader { get; }
+
+        private IStorageWriter StorageWriter { get; }
 
         /// <inheritdoc/>
         public async Task Parse()
@@ -46,11 +50,11 @@ namespace Wildberries.Parsing
             {
                 var items = this.ItemsReader.Read(searchKey);
 
-                // TODO: add saving to collection
-                await foreach (var item in items)
-                {
-                }
+                this.StorageWriter.CreatePage(searchKey);
+                await this.StorageWriter.Write(items);
             }
+
+            await this.StorageWriter.Save();
         }
 
         private async Task<List<string>> GetKeysFromFile()

@@ -26,7 +26,7 @@ namespace Wildberries.Parsing.JsonSearchPage.Deserialization
             JsonSearchPageDocument document = JsonSerializer.Deserialize<JsonSearchPageDocument>(input);
 
             return from item in document.PageData.Products
-                   select this.Mapper.Map<Product,SiteItem>(item);
+                   select this.Mapper.Map<Product, SiteItem>(item);
         }
     }
 }

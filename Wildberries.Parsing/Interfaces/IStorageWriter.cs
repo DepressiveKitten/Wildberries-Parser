@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Wildberries.Parsing.Interfaces
 {
@@ -13,7 +14,8 @@ namespace Wildberries.Parsing.Interfaces
         /// </summary>
         /// <param name="items">Items to be saved.</param>
         /// <exception cref="ArgumentNullException">Throws if items is null.</exception>
-        public void Write(IAsyncEnumerable<SiteItem> items);
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        public Task Write(IAsyncEnumerable<SiteItem> items);
 
         /// <summary>
         /// Creates new page with set name for the following items.
@@ -21,5 +23,11 @@ namespace Wildberries.Parsing.Interfaces
         /// <param name="name">Page name.</param>
         /// <exception cref="ArgumentNullException">Throws if name is null.</exception>
         public void CreatePage(string name);
+
+        /// <summary>
+        /// Saves all changes.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        public Task Save();
     }
 }
