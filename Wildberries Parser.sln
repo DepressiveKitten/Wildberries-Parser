@@ -3,14 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wildberries Parser", "Wildberries Parser\Wildberries Parser.csproj", "{D007F4B8-85EE-4707-AFA2-DD058482DBFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wildberries Parser", "Wildberries Parser\Wildberries Parser.csproj", "{D007F4B8-85EE-4707-AFA2-DD058482DBFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wildberries.Parsing", "Wildberries.Parsing\Wildberries.Parsing.csproj", "{B1B1F423-CE55-47D2-A853-99626156630F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wildberries.Parsing", "Wildberries.Parsing\Wildberries.Parsing.csproj", "{B1B1F423-CE55-47D2-A853-99626156630F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BEEA3C8B-3229-4AE2-9620-AEEFA16E0854}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wildberries.Parsing.JsonSearchPage", "Wildberries.Parsing.JsonSearchPage\Wildberries.Parsing.JsonSearchPage.csproj", "{DE9E5EAF-2177-4141-A2D0-2AC4208D69BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wildberries.Parsing.JsonSearchPage.Deserialization", "Wildberries.Parsing.JsonSearchPage.Deserialization\Wildberries.Parsing.JsonSearchPage.Deserialization.csproj", "{51501F91-3157-4659-991C-B9FEFA4054AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wildberries.Parsing.ExcelStorage", "Wildberries.Parsing.ExcelStorage\Wildberries.Parsing.ExcelStorage.csproj", "{BE10BA94-AE75-4049-B850-992CCBE1CE0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +32,18 @@ Global
 		{B1B1F423-CE55-47D2-A853-99626156630F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1B1F423-CE55-47D2-A853-99626156630F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1B1F423-CE55-47D2-A853-99626156630F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE9E5EAF-2177-4141-A2D0-2AC4208D69BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE9E5EAF-2177-4141-A2D0-2AC4208D69BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE9E5EAF-2177-4141-A2D0-2AC4208D69BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE9E5EAF-2177-4141-A2D0-2AC4208D69BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51501F91-3157-4659-991C-B9FEFA4054AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51501F91-3157-4659-991C-B9FEFA4054AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51501F91-3157-4659-991C-B9FEFA4054AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51501F91-3157-4659-991C-B9FEFA4054AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE10BA94-AE75-4049-B850-992CCBE1CE0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE10BA94-AE75-4049-B850-992CCBE1CE0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE10BA94-AE75-4049-B850-992CCBE1CE0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE10BA94-AE75-4049-B850-992CCBE1CE0B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
