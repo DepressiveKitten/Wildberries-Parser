@@ -11,9 +11,8 @@ namespace Wildberries.Parsing.Interfaces
         /// Validate all parameters of item.
         /// </summary>
         /// <param name="siteItem">Object to validate.</param>
-        /// <exception cref="ArgumentNullException">item is null.</exception>
-        /// <exception cref="ArgumentException">One of items parameters is not Valid.</exception>
-        public void Validate(SiteItem siteItem)
+        /// <returns>Tuple with value of validation and info message.</returns>
+        public Tuple<bool, string> Validate(SiteItem siteItem)
         {
             if (siteItem is null)
             {
@@ -25,32 +24,34 @@ namespace Wildberries.Parsing.Interfaces
             result = this.ValidateId(siteItem.Id);
             if (!result.Item1)
             {
-                throw new ArgumentException(result.Item2, nameof(siteItem));
+                return result;
             }
 
             result = this.ValidateTitle(siteItem.Title);
             if (!result.Item1)
             {
-                throw new ArgumentException(result.Item2, nameof(siteItem));
+                return result;
             }
 
             result = this.ValidateBrand(siteItem.Brand);
             if (!result.Item1)
             {
-                throw new ArgumentException(result.Item2, nameof(siteItem));
+                return result;
             }
 
             result = this.ValidateFeedbacks(siteItem.Feedbacks);
             if (!result.Item1)
             {
-                throw new ArgumentException(result.Item2, nameof(siteItem));
+                return result;
             }
 
             result = this.ValidatePrice(siteItem.Price);
             if (!result.Item1)
             {
-                throw new ArgumentException(result.Item2, nameof(siteItem));
+                return result;
             }
+
+            return Tuple.Create(true, string.Empty);
         }
 
         /// <summary>
